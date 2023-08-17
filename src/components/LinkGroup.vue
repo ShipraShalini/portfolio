@@ -1,22 +1,16 @@
 <script setup lang="ts">
 
-interface Link {
-  label: string
-  href: string
-}
-const Links: Link[] = [
-  {label: "github", href: "https://github.com/shiprashalini/"},
-  {label: "linkedin", href: "https://github.com/shiprashalini"},
-  {label: "source code", href: "https://github.com/shiprashalini/portfolio-we"},
-  {label: "infra code", href: "https://github.com/shiprashalini/portfolio-infra"},
-]
+import {defineProps} from "vue";
+import {Link} from "../constants/links";
+
+defineProps ({links: [] as () => Link[]})
 </script>
 
 
 <template>
   <div>
     <ul>
-      <li v-for="link in Links">
+      <li v-for="link in links">
         <a :href="link.href">[{{ link.label }}]</a>
       </li>
     </ul>

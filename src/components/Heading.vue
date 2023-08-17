@@ -1,5 +1,6 @@
 <script setup lang="ts">
-defineProps<{ text: string }>()
+import {defineProps} from "vue";
+defineProps({ text: string })
 </script>
 
 <template>
